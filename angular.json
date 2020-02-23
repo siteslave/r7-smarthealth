@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "adminlte": {
@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/plugins/fontawesome-free/css/all.min.css",
+              "src/assets/plugins/adminlte/css/adminlte.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/jquery/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/plugins/adminlte/js/adminlte.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "adminlte"
 }
