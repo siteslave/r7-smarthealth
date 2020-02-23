@@ -1,4 +1,4 @@
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-navbar-fixed">
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -16,7 +16,7 @@
       </ul>
 
       <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
+      <!-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -25,7 +25,7 @@
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
@@ -153,17 +153,16 @@
                with font-awesome or any other icon font library -->
             <!-- <li class="nav-item has-treeview menu-open"> -->
             <li class="nav-item">
-              <a href="#" routerLink="./dashboard" [queryParams]="{rnd: rnd}" class="nav-link"
-                routerLinkActive="active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+              <a href="#" routerLink="./profile" [queryParams]="{rnd: rnd}" class="nav-link" routerLinkActive="active">
+                <i class="nav-icon fas fa-user-circle"></i>
                 <p>
-                  Dashboard
+                  Profile
                 </p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" routerLink="./history" [queryParams]="{rnd: rnd}" class="nav-link" routerLinkActive="active">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-history"></i>
                 <p>
                   History
                 </p>
@@ -172,19 +171,13 @@
 
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-cog"></i>
                 <p>
                   Settings
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" routerLink="./info" [queryParams]="{rnd: rnd}" class="nav-link" routerLinkActive="active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Profile</p>
-                  </a>
-                </li>
                 <li class="nav-item">
                   <a href="#" routerLink="./consents" [queryParams]="{rnd: rnd}" class="nav-link"
                     routerLinkActive="active">
