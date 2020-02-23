@@ -153,7 +153,8 @@
                with font-awesome or any other icon font library -->
             <!-- <li class="nav-item has-treeview menu-open"> -->
             <li class="nav-item">
-              <a href="#" routerLink="./dashboard" class="nav-link" routerLinkActive="active">
+              <a href="#" routerLink="./dashboard" [queryParams]="{rnd: rnd}" class="nav-link"
+                routerLinkActive="active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -161,7 +162,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" routerLink="./history" class="nav-link" routerLinkActive="active">
+              <a href="#" routerLink="./history" [queryParams]="{rnd: rnd}" class="nav-link" routerLinkActive="active">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   History
@@ -179,13 +180,14 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" routerLink="./info" class="nav-link" routerLinkActive="active">
+                  <a href="#" routerLink="./info" [queryParams]="{rnd: rnd}" class="nav-link" routerLinkActive="active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Profile</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" routerLink="./consents" class="nav-link" routerLinkActive="active">
+                  <a href="#" routerLink="./consents" [queryParams]="{rnd: rnd}" class="nav-link"
+                    routerLinkActive="active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Consents</p>
                   </a>

@@ -9,6 +9,8 @@ import { HelperService } from '../shared/helper.service';
 })
 export class UsersComponent implements OnInit {
 
+  rnd = Math.random();
+
   constructor(private router: Router, private helperService: HelperService) {
 
   }
