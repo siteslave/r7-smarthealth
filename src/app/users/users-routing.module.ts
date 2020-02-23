@@ -11,6 +11,8 @@ const routes: Routes = [
       { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
       { path: 'consents', loadChildren: () => import('./consents/consents.module').then(m => m.ConsentsModule) },
       { path: 'history', loadChildren: () => import('./history/history.module').then(m => m.HistoryModule) },
+      { path: '**', redirectTo: 'page-not-found', pathMatch: 'full' }
+
     ]
   },
 ];

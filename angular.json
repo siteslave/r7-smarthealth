@@ -26,6 +26,7 @@
             "styles": [
               "src/assets/plugins/fontawesome-free/css/all.min.css",
               "src/assets/plugins/adminlte/css/adminlte.min.css",
+              "src/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css",
               "src/styles.css"
             ],
             "scripts": [
