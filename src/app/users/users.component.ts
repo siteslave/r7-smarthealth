@@ -12,7 +12,11 @@ export class UsersComponent implements OnInit {
   rnd = Math.random();
 
   constructor(private router: Router, private helperService: HelperService) {
-
+    const count = +localStorage.getItem('count') || 0;
+    if (!count) {
+      localStorage.setItem('count', '1');
+      window.location.reload();
+    }
   }
 
   ngOnInit(): void {
@@ -20,6 +24,7 @@ export class UsersComponent implements OnInit {
 
   logout(): void {
     this.helperService.removeAllCookies();
+    localStorage.clear();
     const rnd = Math.random();
     this.router.navigateByUrl('/login?rnd=' + rnd);
   }
