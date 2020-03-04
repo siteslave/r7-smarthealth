@@ -11,6 +11,9 @@ export class UsersComponent implements OnInit {
 
   rnd = Math.random();
 
+  firstName: any;
+  lastName: any;
+
   constructor(private router: Router, private helperService: HelperService) {
     const count = +localStorage.getItem('count') || 0;
     if (!count) {
@@ -20,6 +23,8 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.firstName = this.helperService.getCookie('firstName');
+    this.lastName = this.helperService.getCookie('lastName');
   }
 
   logout(): void {

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HelperService {
 
-  tokenName = 'ssoUserToken';
+  tokenName = 'smhToken';
 
   constructor(private cookieService: CookieService) { }
 
@@ -33,12 +33,13 @@ export class HelperService {
   }
 
   getAuthHeader(): object {
-    const token = this.tokenName;
+    const tokenName = this.tokenName;
+    const token = this.getCookie(tokenName);
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
+        'jwt-token': token
       })
     };
 

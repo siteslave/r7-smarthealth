@@ -1,0 +1,114 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">ตรวจสอบสิทธิ์การรักษา</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="javascript:void(0)" routerLink="/users">หน้าหลัก</a></li>
+          <li class="breadcrumb-item active">ตรวจสอบสิทธิ์การรักษา</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <div class="input-group">
+                <input type="text" (keyup)="onEnterSearch($event)" [(ngModel)]="cid" name="cid"
+                  placeholder="เลขบัตรประชาชน" class="form-control">
+                <span class="input-group-append">
+                  <button type="button" class="btn btn-primary" [disabled]="!cid" (click)="search()">ค้นหา</button>
+                </span>
+
+                <span class="input-group-append">
+                  <button type="button" class="btn btn-secondary" (click)="settingNhso()">ตั้งค่า</button>
+                </span>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            ผลการค้นหา
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td>เลขบัตรประชาชน</td>
+                  <td>
+                    {{personId}}
+                  </td>
+                  <td>หมายเลขบัตร</td>
+                  <td>{{cardid}}</td>
+                </tr>
+                <tr>
+                  <td>ชื่อ - สกุล</td>
+                  <td>
+                    {{titleName}}{{fname}} {{lname}}
+                  </td>
+                  <td>วันเกิด</td>
+                  <td>{{birthdate}}</td>
+                </tr>
+                <tr>
+                  <td>สิทธิ์หลัก</td>
+                  <td>{{maininscl}} {{maininsclName}}</td>
+                  <td>สิทธิ์รอง</td>
+                  <td>{{subinscl}} {{subinsclName}}</td>
+                </tr>
+                <tr>
+                  <td>สถานบริการหลัก</td>
+                  <td>{{hmain}} {{hmainName}}</td>
+                  <td>สถานบริการรอง</td>
+                  <td>{{hsub}} {{hsubName}}</td>
+                </tr>
+                <tr>
+                  <td>วันเริ่มใช้สิทธิ</td>
+                  <td>{{startdate}}</td>
+                  <td>วันหมดอายุ</td>
+                  <td>{{expdate}}</td>
+                </tr>
+                <tr>
+                  <td>สถานะ</td>
+                  <td>{{status}}</td>
+                  <td>BATCH ID</td>
+                  <td>{{wsidBatch}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->
+
+<app-modal-nhso-setting (onSaved)="onSaveSetting($event)" #mdlNhsoSetting></app-modal-nhso-setting>
+
+<ngx-loading [show]="loading" [config]="{ 
+      backdropBorderRadius: '3px' ,
+      primaryColour: '#3b7ddd', 
+      secondaryColour: '#3b7ddd', 
+      tertiaryColour: '#3b7ddd'
+    }">
+</ngx-loading>

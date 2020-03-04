@@ -1,0 +1,34 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">ตั้งค่า</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="userPersonId">เลขบัตรประชาชนเจ้าหน้าที่</label>
+        <input type="text" name="userPersonId" [(ngModel)]="userPersonId" class="form-control" id="userPersonId"
+          aria-describedby="userPersonIdHelper">
+        <small id="userPersonIdHelper" class="form-text text-muted">
+          หมายเลขบัตรประชาชนเจ้าหน้าที่ที่มีสิทธิใช้งานในระบบตรวจสอบสิทธิ์ สปสช.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="smctoken">รหัส TOKEN</label>
+        <input type="text" class="form-control" name="smctoken" [(ngModel)]="smctoken" id="smctoken"
+          aria-describedby="tokenHelper">
+        <small id="tokenHelper" class="form-text text-muted">
+          Token ที่ได้จากโปรแกรม UC Authentication
+        </small>
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" [disabled]="!smctoken || !userPersonId"
+      (click)="saveSetting()">บันทึก</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('')">ปิดหน้าต่าง</button>
+  </div>
+</ng-template>

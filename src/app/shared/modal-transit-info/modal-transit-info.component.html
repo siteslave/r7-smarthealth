@@ -1,0 +1,95 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">ข้อมูลการเดินทาง</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th colspan="2">รายละเอียดการเดินทาง</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="width: 80px;">GIVENNAME</td>
+          <td class="text-left">{{GIVENNAME}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">MIDDLENAME</td>
+          <td class="text-left">{{MIDDLENAME}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">SURNAME</td>
+          <td class="text-left">{{SURNAME}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">SEX</td>
+          <td class="text-left">{{SEX}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">DOCUMENTTYPE</td>
+          <td class="text-left">{{DOCUMENTTYPE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">DOCUMENTNO</td>
+          <td class="text-left">{{DOCUMENTNO}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">FLIGHTNO</td>
+          <td class="text-left">{{FLIGHTNO}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">CITIZENID</td>
+          <td class="text-left">{{CITIZENID}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">COUNTRY</td>
+          <td class="text-left">{{COUNTRY}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">NATION</td>
+          <td class="text-left">{{NATION}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">PROVINCE</td>
+          <td class="text-left">{{PROVINCE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">TRAN_DATE</td>
+          <td class="text-left">{{TRAN_DATE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">TRANSACTIONTYPE</td>
+          <td class="text-left">{{TRANSACTIONTYPE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">DEPARTMENT</td>
+          <td class="text-left">{{DEPARTMENT}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">DATE_OF_BIRTH</td>
+          <td class="text-left">{{DATE_OF_BIRTH}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">CREATE_DATE</td>
+          <td class="text-left">{{CREATE_DATE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">UPDATE_DATE</td>
+          <td class="text-left">{{UPDATE_DATE}}</td>
+        </tr>
+        <tr>
+          <td style="width: 80px;">UPDATE_BY</td>
+          <td class="text-left">{{UPDATE_BY}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('')">ปิดหน้าต่าง</button>
+  </div>
+</ng-template>
