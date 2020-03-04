@@ -14,6 +14,8 @@ export class ModalNhsoSettingComponent implements OnInit {
   userPersonId: any;
   smctoken: any;
 
+  r7Token: any;
+
   provider = 'r7';
 
   constructor(private modalService: NgbModal) { }
@@ -25,6 +27,7 @@ export class ModalNhsoSettingComponent implements OnInit {
 
     this.userPersonId = localStorage.getItem('nhsoUserPersonId');
     this.smctoken = localStorage.getItem('nhsoSmctoken');
+    this.r7Token = localStorage.getItem('r7Token');
     this.provider = localStorage.getItem('provider') || 'r7';
 
     this.modalService
@@ -44,6 +47,7 @@ export class ModalNhsoSettingComponent implements OnInit {
     localStorage.setItem('nhsoSmctoken', this.smctoken);
 
     localStorage.setItem('provider', this.provider);
+    localStorage.setItem('r7Token', this.r7Token);
 
     this.onSaved.emit(true);
     this.modalService.dismissAll();

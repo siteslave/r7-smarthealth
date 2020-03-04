@@ -47,4 +47,16 @@ export class HelperService {
 
   }
 
+  getR7AuthHeader(r7Token: any): object {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + r7Token
+      })
+    };
+
+    return httpOptions;
+
+  }
+
 }

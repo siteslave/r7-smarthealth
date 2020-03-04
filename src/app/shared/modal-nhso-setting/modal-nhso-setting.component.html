@@ -15,6 +15,14 @@
         </select>
       </div>
       <div class="form-group">
+        <label for="r7Token">R7 Token</label>
+        <input type="text" name="r7Token" [(ngModel)]="r7Token" class="form-control" id="r7Token"
+          aria-describedby="r7TokenHelper">
+        <small id="r7TokenHelper" class="form-text text-muted">
+          TOKEN ที่ได้จาก R7 ขอได้ที่ rianpit@gmail.com
+        </small>
+      </div>
+      <div class="form-group">
         <label for="userPersonId">เลขบัตรประชาชนเจ้าหน้าที่</label>
         <input type="text" name="userPersonId" [(ngModel)]="userPersonId" class="form-control" id="userPersonId"
           aria-describedby="userPersonIdHelper">

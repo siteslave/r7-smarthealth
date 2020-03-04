@@ -18,6 +18,7 @@ export class RightsComponent implements OnInit {
   smctoken: any;
   personId: any;
 
+  r7Token: any;
   provider: any;
 
   birthdate: any;
@@ -56,6 +57,7 @@ export class RightsComponent implements OnInit {
     this.userPersonId = localStorage.getItem('nhsoUserPersonId');
     this.smctoken = localStorage.getItem('nhsoSmctoken');
     this.provider = localStorage.getItem('provider');
+    this.r7Token = localStorage.getItem('r7Token');
   }
 
   ngOnInit(): void {
@@ -66,6 +68,7 @@ export class RightsComponent implements OnInit {
       this.userPersonId = localStorage.getItem('nhsoUserPersonId');
       this.smctoken = localStorage.getItem('nhsoSmctoken');
       this.provider = localStorage.getItem('provider');
+      this.r7Token = localStorage.getItem('r7Token');
     }
   }
 
@@ -90,7 +93,7 @@ export class RightsComponent implements OnInit {
           if (this.provider === 'moph') {
             rs = await this.smartHealthService.searchRightWithSmartHealth(this.userPersonId, this.cid, this.smctoken);
           } else {
-            rs = await this.smartHealthService.searchRightWithR7(this.userPersonId, this.cid, this.smctoken);
+            rs = await this.smartHealthService.searchRightWithR7(this.userPersonId, this.cid, this.smctoken, this.r7Token);
           }
 
           this.loading = false;

@@ -34,13 +34,15 @@ export class SmartHealthService {
     return this.http.post(url, {}, header).toPromise();
   }
 
-  searchRightWithR7(userPersonId: any, personId: any, smctoken: any) {
+  searchRightWithR7(userPersonId: any, personId: any, smctoken: any, r7Token: any) {
     const url = `${this.nhsoUrl}/check-right`;
+
+    const header = this.helperService.getR7AuthHeader(r7Token);
     return this.http.post(url, {
       userPersonId,
       personId,
       smctoken
-    }).toPromise();
+    }, header).toPromise();
   }
 
 
