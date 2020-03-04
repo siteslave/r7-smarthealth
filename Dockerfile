@@ -2,7 +2,7 @@ FROM node:10-alpine
 
 LABEL maintainer="Satit Rianpit <rianpit@gmail.com>"
 
-WORKDIR /home/booking
+WORKDIR /home/smarthealth
 
 RUN apk add --upgrade --no-cache --virtual deps python build-base git
 
