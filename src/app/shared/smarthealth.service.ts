@@ -4,8 +4,6 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HelperService } from './helper.service';
 
-import * as soapRequest from 'easy-soap-request';
-
 @Injectable({
   providedIn: 'root'
 })
