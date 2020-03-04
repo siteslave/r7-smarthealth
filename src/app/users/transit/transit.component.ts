@@ -17,6 +17,7 @@ export class TransitComponent implements OnInit {
   query: any;
   results: any = [];
   loading = false;
+  isAccepted = false;
 
 
   constructor(private smartHealthService: SmartHealthService, private alertService: AlertService) { }

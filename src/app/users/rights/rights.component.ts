@@ -50,6 +50,7 @@ export class RightsComponent implements OnInit {
 
   loading = false;
 
+
   constructor(
     private smartHealthService: SmartHealthService,
     private alertService: AlertService

@@ -19,7 +19,7 @@
 <!-- Main content -->
 <div class="content">
   <div class="container-fluid">
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="!isAccepted">
       <h4 class="alert-heading">ข้อตกลงในการใช้งาน!</h4>
       <p>
         กระทรวง​สาธารณสุข​อนุญาต​ให้ใช้งานระบบนี้เฉพาะผู้ป่วยที่แสดงอาการสงสัยโรค COVID-19
@@ -32,20 +32,26 @@
         ทั้งนี้ เพื่อป้องกันการถูกตีตรา (Stigma)​
         <br> <br>
         สำหรับโรงพยาบาล สถานพยาบาลอื่นๆ ทั้งรัฐและเอกชน (เฉพาะประเภทที่มีบริการผู้ป่วยใน) สามารถสมัครเข้าใช้บริการได้
-        <a href="https://sl.moph.go.th/zJoS5Vf">ที่นี่</a>
+        <a href="https://sl.moph.go.th/zJoS5Vf" class="alert-link">ที่นี่</a>
         <br>
         <strong><u>!!หากละเมิด!!</u></strong> และเกิดความเสียหาย ท่านต้องรับผิดตามกฎหมาย
       </p>
       <hr>
-      <p class="mb-0">
-        ให้บริการข้อมูลโดย ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร สำนักงานปลัดกระทรวงสาธารณสุข
-      </p>
+      <div class="row">
+        <div class="col-md-6">
+          Powered by <a href="https://ict.moph.go.th" class="alert-link">ICT@MoPH</a>
+        </div>
+        <div class="col-md-6 text-right">
+          <button class="btn btn-danger" (click)="isAccepted = true;">ยอมรับเงื่อนไข</button>
+
+        </div>
+      </div>
 
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="isAccepted">
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
@@ -70,7 +76,7 @@
       <!-- /.col-md-6 -->
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="isAccepted">
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
