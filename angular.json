@@ -27,6 +27,7 @@
               "src/assets/plugins/fontawesome-free/css/all.min.css",
               "src/assets/plugins/adminlte/css/adminlte.min.css",
               "src/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css",
+              "node_modules/github-fork-ribbon-css/gh-fork-ribbon.css",
               "src/styles.css"
             ],
             "scripts": [
