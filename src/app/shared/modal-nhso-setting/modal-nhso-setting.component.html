@@ -14,7 +14,7 @@
           <option value="moph">SmartHealth (MOPH)</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="form-group" *ngIf="provider === 'r7'">
         <label for="r7Token">R7 Token</label>
         <input type="text" name="r7Token" [(ngModel)]="r7Token" class="form-control" id="r7Token"
           aria-describedby="r7TokenHelper">
