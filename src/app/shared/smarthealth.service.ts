@@ -28,7 +28,13 @@ export class SmartHealthService {
     return this.http.get(url, header).toPromise();
   }
 
-  searchNhsoRight(userPersonId: any, personId: any, smctoken: any) {
+  searchRightWithSmartHealth(userPersonId: any, personId: any, smctoken: any) {
+    const url = `https://smarthealth.service.moph.go.th/phps/api/nhsodata/v1/search_by_pid?userPersonId=${userPersonId}&smctoken=${smctoken}&personId=${personId}`;
+    const header = this.helperService.getAuthHeader();
+    return this.http.post(url, {}, header).toPromise();
+  }
+
+  searchRightWithR7(userPersonId: any, personId: any, smctoken: any) {
     const url = `${this.nhsoUrl}/check-right`;
     return this.http.post(url, {
       userPersonId,

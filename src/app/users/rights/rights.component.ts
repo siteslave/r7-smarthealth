@@ -18,6 +18,8 @@ export class RightsComponent implements OnInit {
   smctoken: any;
   personId: any;
 
+  provider: any;
+
   birthdate: any;
   cardid: any;
   expdate: any;
@@ -53,6 +55,7 @@ export class RightsComponent implements OnInit {
   ) {
     this.userPersonId = localStorage.getItem('nhsoUserPersonId');
     this.smctoken = localStorage.getItem('nhsoSmctoken');
+    this.provider = localStorage.getItem('provider');
   }
 
   ngOnInit(): void {
@@ -62,6 +65,7 @@ export class RightsComponent implements OnInit {
     if (event) {
       this.userPersonId = localStorage.getItem('nhsoUserPersonId');
       this.smctoken = localStorage.getItem('nhsoSmctoken');
+      this.provider = localStorage.getItem('provider');
     }
   }
 
@@ -82,29 +86,35 @@ export class RightsComponent implements OnInit {
       if (this.cid) {
         this.loading = true;
         try {
-          const rs: any = await this.smartHealthService.searchNhsoRight(this.userPersonId, this.cid, this.smctoken);
+          let rs: any;
+          if (this.provider === 'moph') {
+            rs = await this.smartHealthService.searchRightWithSmartHealth(this.userPersonId, this.cid, this.smctoken);
+          } else {
+            rs = await this.smartHealthService.searchRightWithR7(this.userPersonId, this.cid, this.smctoken);
+          }
+
           this.loading = false;
-          if (rs.ws_status === 'NHSO-000001') {
-            this.personId = rs.person_id;
+          const wsStatus = rs.ws_status || rs.wsStatus;
+          if (wsStatus === 'NHSO-000001') {
+            this.personId = rs.person_id || rs.personId;
             this.fname = rs.fname;
             this.lname = rs.lname;
             this.birthdate = moment(rs.birthdate, 'YYYYMMDD').locale('th').format('D MMM YYYY');
             this.maininscl = rs.maininscl;
-            this.maininsclName = rs.maininscl_name;
+            this.maininsclName = rs.maininscl_name || rs.maininsclName;
             this.subinscl = rs.subinscl;
-            this.subinsclName = rs.subinscl_name;
+            this.subinsclName = rs.subinscl_name || rs.subinsclName;
             this.title = rs.title;
-            this.titleName = rs.title_name;
+            this.titleName = rs.title_name || rs.titleName;
             this.cardid = rs.cardid;
             this.startdate = rs.startdate ? moment(rs.startdate, 'YYYYMMDD').locale('th').format('D MMM YYYY') : '';
             this.expdate = moment(rs.expdate).isValid() ? moment(rs.expdate, 'YYYYMMDD').locale('th').format('D MMM YYYY') : rs.expdate;
             this.hmain = rs.hmain;
-            this.hmainName = rs.hmain_name;
+            this.hmainName = rs.hmain_name || rs.hmainName;
             this.hsub = rs.hsub;
-            this.hsubName = rs.hsub_name;
-            this.statusDesc = rs.status_desc;
-            this.titleName = rs.title_name;
-            this.wsidBatch = rs.wsid_batch;
+            this.hsubName = rs.hsub_name || rs.hsubName;
+            this.statusDesc = rs.status_desc || rs.statusDesc;
+            this.wsidBatch = rs.wsid_batch || rs.wsidBatch;
           } else {
             this.alertService.warning('ไม่พบข้อมูล');
             this.personId = '';

@@ -8,6 +8,13 @@
   <div class="modal-body">
     <form>
       <div class="form-group">
+        <label for="slProvider">Providers</label>
+        <select class="form-control" id="slProvider" name="slProvider" [(ngModel)]="provider">
+          <option value="r7">สำนักงานเขตสุขภาพที่ 7</option>
+          <option value="moph">SmartHealth (MOPH)</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="userPersonId">เลขบัตรประชาชนเจ้าหน้าที่</label>
         <input type="text" name="userPersonId" [(ngModel)]="userPersonId" class="form-control" id="userPersonId"
           aria-describedby="userPersonIdHelper">

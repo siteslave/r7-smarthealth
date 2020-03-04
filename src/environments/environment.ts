@@ -7,7 +7,7 @@ export const environment = {
   secureCookie: false,
   smartHealthGetTokenUrl: 'https://smarthealth.service.moph.go.th/phps/public/api/v3/gettoken',
   smartHealthImmigrationUrl: 'https://smarthealth.service.moph.go.th/phps/api/immigration/v1',
-  nhsoUrl: 'http://localhost:3000'
+  nhsoUrl: 'https://r7app.moph.go.th/api/nhso'
 };
 
 /*
