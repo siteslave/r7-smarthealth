@@ -23,7 +23,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "@ng-select/ng-select": "^3.7.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "github-fork-ribbon-css": "^0.2.3",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
